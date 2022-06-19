@@ -2,7 +2,7 @@
   <h1>Lista de usuarios registrados</h1>
   <!-- hacer busqueda -->
   <div class="formulario">
-    <%= form_with(url:'/listar_usuarios', method: :get) do |f| %>
+    <%= form_with(url:'/listar_usuarios', method: :get)  do |f| %>
       <%= f.text_field :busqueda, placeholder: "buscar", class: "form-control" %>
       <%= f.submit "Buscar", class: "btn btn-primary" %>
     <% end %>
