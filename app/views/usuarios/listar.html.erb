@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Lista de usuarios registrados</h1>
+  <!-- hacer busqueda -->
+  <div class="formulario">
+    <%= form_with(url:'/listar_usuarios', method: :get) do |f| %>
+      <%= f.text_field :busqueda, placeholder: "buscar", class: "form-control" %>
+      <%= f.submit "Buscar", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<!-- mostrar toda la lista de usuarios -->
+<div class="my-3">
+  <% @lista_de_usuarios.each do |u| %>
+    <div class="card p-3 my-3">
+      <p>
+        usuario: <%= u.id%>,
+        nombre: <%= u.nombre %>
+        
+      </p>
+      <p>
+        apellido: <%= u.apellido %>
+      </p>
+      <p>
+        correo: <%= u.correo %>
+      </p>
+      <p>
+        contraseña: <%= u.password %>
+      </p>
+      <p>
+        color favorito: <%= u.color_favorito %>
+      </p>
+    </div>
+    <% end %>
+</div>
+  
+</div>
